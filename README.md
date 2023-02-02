@@ -1,20 +1,29 @@
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <h3 align="center">JSSI MADAGASCAR</h3>
+
+  <p align="center">
+    <br />
+    
+  </p>
+</div>
+
 <!-- GETTING STARTED -->
-## Getting Started
+### Intoduction
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+JSSI-MADAGASCAR est un projet développé avec react (v18)
 
-### Prerequisites
+### Prérequits
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+Pour pouvoir l'utiliser, vous devez installer la version la plus recente de NodeJS
+* nodejs
   ```sh
-  npm install npm@latest -g
+  sudo apt-get install nodejs
   ```
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
 1. Clone the repo
    ```sh

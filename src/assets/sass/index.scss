@@ -1,0 +1,508 @@
+@font-face {
+    font-family: "poppins-regular";
+    src: url("../fonts/Poppins/Poppins-Regular.ttf");
+}
+@font-face {
+    font-family: "poppins-medium";
+    src: url("../fonts/Poppins/Poppins-Medium.ttf");
+}
+@font-face {
+    font-family: "poppins-semi-bold";
+    src: url("../fonts/Poppins/Poppins-SemiBold.ttf");
+}
+@font-face {
+    font-family: "poppins-bold";
+    src: url("../fonts/Poppins/Poppins-Bold.ttf");
+}
+@keyframes spinner {
+    to{
+        transform: rotate(360deg);
+    }
+}
+*{
+    margin:0;
+    padding: 0;
+}
+html{
+    height: 100%;
+    position: relative;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    
+    body{
+       
+        position: inherit;
+        height: 100%;
+        #root{
+            height: 100%;
+            font-family: "poppins-regular";
+            
+            nav.navbar{
+                background-color: transparent;
+                font-family: "poppins-semi-bold";
+                .container{
+                    .collapse{
+                        .navbar-nav{
+                            
+                            .active{
+                                border-bottom: 1px solid #FFB300;
+                            }
+                        }
+                    }
+                }
+            }
+            section{
+                &#preloader{
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    z-index: 10;
+                    display: flex;
+                    flex-direction: column;
+                    flex-flow: row nowrap;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: #fff;
+                    .spinner{
+                        border: 1px solid transparent;
+                        border-radius: 3px;
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        &::before{
+                            content: '';
+                            box-sizing: border-box;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            width: 45px;
+                            height: 45px;
+                            margin-top: -10px;
+                            margin-left: -10px;
+                            border-radius: 50%;
+                            border: 1px solid #575757;
+                            border-top-color: #fff;
+                            animation: spinner .9s linear infinite;
+                            -webkit-animation:spinner .9s linear infinite;
+                            -moz-animation:spinner .9s linear infinite;
+                            -o-animation:spinner .9s linear infinite;
+                            -ms-animation:spinner .9s linear infinite;
+                        }
+                    }
+                }
+                .container{
+                    h2{
+                        color: gray;
+                    }
+                }
+                &#home{
+                    height: 100%;
+                    background-image: url("../images/banner/Photo\ Bannière\ JSSI\ sans\ logo.png");
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    position: relative;
+                    z-index: 0;
+                    .blur{
+                        position: absolute;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 1;
+                        background-color: #0e0f0f63;
+                    }
+                    .container{
+                        position: relative;
+                        z-index: 2;
+                        height: 100%;
+                        .row{
+                            .col-md-6{
+                                h1{
+                                    font-family: "poppins-bold";
+                                    color: #fff;
+                                    
+                                }
+                                a{
+                                    position: relative;
+                                    padding: 1em 1.8em;
+                                    outline: none;
+                                    border: 1px solid #303030;
+                                    background: #212121;
+                                    color: #FFB300;
+                                    text-transform: uppercase;
+                                    letter-spacing: 2px;
+                                    font-size: 15px;
+                                    overflow: hidden;
+                                    transition: 0.2s;
+                                    border-radius: 20px;
+                                    cursor: pointer;
+                                    font-weight: bold;
+                                    &:hover{
+                                        box-shadow: 0 0 5px #FFB300, 0 0 5px #FFB300, 0 0 5px #FFB300;
+                                        transition-delay: 0.6s;
+                                        span{
+                                            &:nth-child(1){
+                                                left: 100%;
+                                                transition: 0.7s;
+                                            }
+                                            &:nth-child(3){
+                                                right: 100%;
+                                                transition: 0.7s;
+                                                transition-delay: 0.35s;
+                                            }
+                                            &:nth-child(2){
+                                                top: 100%;
+                                                transition: 0.7s;
+                                                transition-delay: 0.17s;
+                                            }
+                                            &:nth-child(4){
+                                                bottom: 100%;
+                                                transition: 0.7s;
+                                                transition-delay: 0.52s;                                               
+                                            }
+                                        }
+                                    }
+                                    span{
+                                        position: absolute;
+                                        &:nth-child(1){
+                                            top: 0;
+                                            left: -100%;
+                                            width: 100%;
+                                            height: 2px;
+                                            background: linear-gradient(90deg, transparent, #FFB300);
+                                        }
+                                        &:nth-child(3){
+                                            bottom: 0;
+                                            right: -100%;
+                                            width: 100%;
+                                            height: 2px;
+                                            background: linear-gradient(90deg, transparent, #FFB300);
+                                        }
+                                        &:nth-child(2){
+                                            top: -100%;
+                                            right: 0;
+                                            width: 2px;
+                                            height: 100%;
+                                            background: linear-gradient(180deg, transparent, #FFB300);
+                                        }
+                                        &:nth-child(4){
+                                            bottom: -100%;
+                                            left: 0;
+                                            width: 2px;
+                                            height: 100%;
+                                            background: linear-gradient(360deg, transparent, #FFB300);
+                                        }
+                                    }
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+                &#about{
+                    .container{
+                        h2{
+                            font-family: "poppins-semi-bold";
+                        }
+                        .row{
+                            .col-md-5{
+                                h5{
+                                    font-family: "poppins-medium";
+                                    color: rgb(80, 80, 80);
+                                }
+                            }
+                        }
+                    }
+                }
+                &#service{
+                    background-color: rgba(250, 250, 250, 0.507);
+                    .container{
+                        h2{
+                            font-family: "poppins-semi-bold";
+                        }
+                        .row{
+                            .col-md-4{
+                                transition: all .5s ease-in-out;
+                                -moz-transition: all .5s ease-in-out;
+                                -o-transition: all .5s ease-in-out;
+                                
+                                .card{
+                                    min-height: 15rem;
+                                    box-shadow: 10px 10px 30px #f8f8f8ce,
+                                    -10px -10px 30px #f8f8f8ce;
+                                    border: none;
+                                    div{
+                                        .icon{
+                                            width: 2.5rem;
+                                            height: 2.5rem;
+                                            color: #1d4851;
+                                        }
+
+                                    }
+                                    .card-body{
+                                        h6{
+                                            font-family: "poppins-medium";
+                                        }
+                                        p{
+                                            color: rgb(82, 82, 82);
+                                        }
+                                        a{
+                                            color: rgb(65, 64, 64);
+                                        }
+                                    }
+                                    &:hover{
+                                        transform: scale(1.05);
+                                        div{
+                                            .icon{
+                                                color: #FFB300;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &#contact{
+                   
+                    .container{
+                        
+                        h2{
+                            font-family: "poppins-semi-bold";
+                        }
+                        .row{
+                            .col-md-6{
+                                form{
+                                    input{
+                                        height: 3.5rem;
+                                    }
+                                    
+                                }
+                            }
+                            .col-md-4{
+                                button{
+                                    width: 15rem;
+                                    height: 4.5rem;
+                                    background-image:linear-gradient(to right,#171621,#2e2e35);
+                                    background-position: center;
+                                    border: none;
+                                    font-family: 'poppins-medium';
+                                    text-transform: uppercase;
+                                    text-align: center;
+                                    transition: all 1s ease-in-out;
+                                    -webkit-transition: all 1s ease-in-out;
+                                    -moz-transition: all 1s ease-in-out;
+                                    -o-transition: all 1s ease-in-out;
+                                    &:hover{
+                                        background-image: linear-gradient(to right,#2e2e35,#171621);
+                                        box-shadow: 0 4px 15px 0 #3c3b46;
+                                        background-position: 100% 0;
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &#header{
+                    height: 65%;
+                    position: relative;
+                    z-index: 0;
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    .blur{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        width: 100%;
+                        z-index: 1;
+                        background-color: #17162191;
+                    }
+                    .container{
+                        position: relative;
+                        z-index: 2;
+                        .row{
+                            .col-md-8{
+                                color: #fff;
+                                font-family: "poppins-bold";
+                            }
+                        }
+                    }
+                }
+                &#devContent{
+                    h2{
+                        font-family: "poppins-semi-bold";
+                        color: gray;
+                    }
+                    .container{
+                        .row{
+                            .col-md-6{
+                                column-gap: 1.5rem;
+                                h2{
+                                    font-family: "poppins-medium";
+                                    font-size: 20px;
+                                    font-weight: 700;
+                                    text-align: center;
+                                    color: rgba(175, 175, 175, 0.959);
+                                }
+                                figure{
+                                    height: 15rem;
+                                }
+                            }
+                        }
+                    }
+                }
+                &#contentFormation{
+                    // background-color: rgba(233, 233, 233, 0.712);
+                    h2{
+                        font-family: "poppins-semi-bold";
+                        color: gray;
+                    }
+                    .container{
+                        .row{
+                            .col-md-10{
+                                .card{
+                                    
+                                    box-shadow: 10px 10px 30px #f8f8f8ce,
+                                    -10px -10px 30px #f8f8f8ce;
+                                    border: none;
+                                    color: rgb(58, 57, 57);
+                                    .row{
+                                        .col-md-6{
+                                           
+                                            .fond{
+                                                width: 250px;
+                                                height: 250px;
+                                                position: relative;
+                                                padding: 0;
+                                                &::before{
+                                                    content: '';
+                                                    position:absolute;
+                                                    top: -2px;
+                                                    left: -2px;
+                                                    bottom: -2px;
+                                                    right: -2px;
+                                                    transform: skewX(2deg) skewY(4deg);
+                                                    background: linear-gradient(315deg, #00ccff,#9b048e,#d400d4);
+                                                }
+                                                &::after{
+                                                    content: '';
+                                                    position:absolute;
+                                                    top: -2px;
+                                                    left: -2px;
+                                                    bottom: -2px;
+                                                    right: -2px;
+                                                    background: linear-gradient(315deg, #00ccff,#9b048e,#d400d4);
+                                                    filter: blur(1px);
+                                                }
+                                                img{
+                                                    position: absolute;
+                                                    top: 0;
+                                                    left: 0;
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    z-index: 10;
+                                                }
+                                            }
+                                            .fond1{
+                                                width: 250px;
+                                                height: 250px;
+                                                position: relative;
+                                                padding: 0;
+                                                &::before{
+                                                    content: '';
+                                                    position:absolute;
+                                                    top: -4px;
+                                                    left: -4px;
+                                                    bottom: -4px;
+                                                    right: -4px;
+                                                    transform: skewX(2deg) skewY(4deg);
+                                                    background: linear-gradient(315deg, #00ccff,#9b048e,#2B1D3F);
+                                                }
+                                                &::after{
+                                                    content: '';
+                                                    position:absolute;
+                                                    top: -4px;
+                                                    left: -4px;
+                                                    bottom: -4px;
+                                                    right: -4px;
+                                                    background: linear-gradient(315deg, #00ccff,#9b048e,#2B1D3F);
+                                                    filter: blur(1px);
+                                                }
+                                                img{
+                                                    position: absolute;
+                                                    top: 0;
+                                                    left: 0;
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    z-index: 10;
+                                                }
+                                            }
+                                            
+                                            p{
+                                                font-size: 12px;
+                                            }
+                                            ul{
+                                                list-style: none;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &#contentDesign{
+                    h2{
+                        font-family: "poppins-semi-bold";
+                        color: gray;
+                    }
+                }
+            }
+            footer{
+                section{
+                    .container{
+                        .row{
+                            .col-md-6{
+                                color: rgb(197, 197, 197);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:992px) {
+    html{
+        body{
+            #root{
+                height: auto;
+                nav.navbar{
+                    background-color: #171621 !important;
+                    .container{
+                        .collapse{
+                            .navbar-nav{
+                                
+                                .active{
+                                    color: rgb(241, 186, 4) !important;
+                                    border: none ;
+                                }
+                            }
+                        }
+                    }
+                }
+                #home{
+                    height: 20rem !important;
+                    background-size: 100% 100%;
+                }
+            }
+        }
+    }
+}
